@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="965.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="fxml.FXMLDocumentController">
+  <children>
+    <BorderPane layoutX="14.0" layoutY="14.0" prefHeight="512.0" prefWidth="939.0">
+      <top>
+        <TabPane prefHeight="513.0" prefWidth="939.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+          <tabs>
+            <Tab text="Execute">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="269.0" prefWidth="939.0">
+                  <children>
+                    <Button fx:id="btnStart" layoutX="10.0" layoutY="437.0" mnemonicParsing="false" text="Start" />
+                    <Button fx:id="btnExit" layoutX="856.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnExitOnAction" text="Wyjdź" />
+                    <DatePicker fx:id="exDatePicker" layoutX="137.0" layoutY="14.0" />
+                    <Label layoutX="14.0" layoutY="62.0" prefHeight="21.0" prefWidth="106.0" text="Select system" />
+                    <ComboBox fx:id="exSelectSystem" layoutX="137.0" layoutY="57.0" prefHeight="31.0" prefWidth="770.0" promptText="Select system" />
+                    <Label layoutX="14.0" layoutY="19.0" prefHeight="21.0" prefWidth="106.0" text="Select date" />
+                    <ScrollPane layoutX="20.0" layoutY="95.0" prefHeight="299.0" prefWidth="888.0">
+                      <content>
+                        <TextFlow fx:id="exStatusWindow" mouseTransparent="true">
+                          <effect>
+                            <Glow />
+                          </effect>
+                        </TextFlow>
+                      </content>
+                    </ScrollPane>
+                    <Button id="btnStart" fx:id="btnExternal" layoutX="89.0" layoutY="443.0" mnemonicParsing="false" onAction="#btnExternalOnAction" text="External" />
+                    <Button id="btnStart" layoutX="178.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnExternalOnAction" text="External" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Settings">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <TreeView fx:id="locationTreeView" blendMode="GREEN" cache="true" cacheHint="SCALE" depthTest="DISABLE" prefHeight="364.0" prefWidth="914.9999000000025" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="14.0">
+                      <!--
+                                            <root>
+                                                <CheckBoxTreeItem value="Total list" expanded="true">
+                                                    <children>
+                                                        <CheckBoxTreeItem value="scpr"/>
+                                                        <CheckBoxTreeItem value="rtsh"/>
+                                                        <CheckBoxTreeItem value="bondy"/>
+                                                        <CheckBoxTreeItem value="futures"/>
+                                                        <CheckBoxTreeItem value="ala"/>
+                                                        <CheckBoxTreeItem value="ma"/>
+                                                        <CheckBoxTreeItem value="kota"/>
+                                                        <CheckBoxTreeItem value="oj"/>
+                                                    </children>
+                                                </CheckBoxTreeItem>
+                                            </root>
+                                            -->
+                      <TreeItem value="Case Full Name">
+                        <children>
+                          <TreeItem>
+                            <children>
+                              <TreeItem>
+                                <value>
+                                  <CheckBox id="checkBox1_1" prefWidth="180.0" text="rtsh1" />
+                                </value>
+                              </TreeItem>
+                              <TreeItem>
+                                <value>
+                                  <CheckBox id="checkBox1_2" prefWidth="180.0" text="rtsh2" />
+                                </value>
+                              </TreeItem>
+                              <TreeItem>
+                                <value>
+                                  <CheckBox id="checkBox1_3" prefWidth="180.0" text="rtsh3" />
+                                </value>
+                              </TreeItem>
+                            </children>
+                            <value>
+                              <CheckBox id="checkBox1" prefWidth="180.0" text="rtsh" />
+                            </value>
+                          </TreeItem>
+                          <TreeItem>
+                            <value>
+                              <CheckBox id="checkBox2" prefWidth="180.0" text="TWO" />
+                            </value>
+                          </TreeItem>
+                          <TreeItem>
+                            <value>
+                              <CheckBox id="checkBox3" prefWidth="180.0" text="THREE" />
+                            </value>
+                          </TreeItem>
+                        </children>
+                      </TreeItem>
+                    </TreeView>
+                    <Button fx:id="btWypiszWymaluj" layoutX="14.0" layoutY="389.0" mnemonicParsing="false" onAction="#btWypiszWymalujOnAction" text="Wypisz wymaluj" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="About">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <AreaChart fx:id="aboutAreaChart" layoutX="103.0" layoutY="26.0">
+                      <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                      </xAxis>
+                      <yAxis>
+                        <NumberAxis side="LEFT" />
+                      </yAxis>
+                    </AreaChart>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>
